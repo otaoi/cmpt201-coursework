@@ -1,0 +1,15 @@
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  char *buff = NULL;
+  char size = 0;
+  printf("Lemme get ur line: ");
+  ssize_t readline = getline(&buff, &size, stdin);
+  if (readline == -1) {
+    perror("getline did not work");
+    exit(EXIT_FAILURE);
+  }
+
+}
